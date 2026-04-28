@@ -17,7 +17,6 @@
 				Components/.gitkeep,
 				Extensions/.gitkeep,
 				Features/.gitkeep,
-				Services/.gitkeep,
 			);
 			target = 9B96F8E12FA128BC005A915D /* Gastronomie */;
 		};
