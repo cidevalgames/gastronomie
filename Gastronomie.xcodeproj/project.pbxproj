@@ -10,9 +10,24 @@
 		9B96F8E22FA128BC005A915D /* Gastronomie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gastronomie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9B421FE12FA1411100F2D0C8 /* Exceptions for "Gastronomie" folder in "Gastronomie" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components/.gitkeep,
+				Extensions/.gitkeep,
+				Features/.gitkeep,
+			);
+			target = 9B96F8E12FA128BC005A915D /* Gastronomie */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9B96F8E42FA128BC005A915D /* Gastronomie */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9B421FE12FA1411100F2D0C8 /* Exceptions for "Gastronomie" folder in "Gastronomie" target */,
+			);
 			path = Gastronomie;
 			sourceTree = "<group>";
 		};
@@ -54,7 +69,7 @@
 			buildPhases = (
 				9B96F8DE2FA128BC005A915D /* Sources */,
 				9B96F8DF2FA128BC005A915D /* Frameworks */,
-				9B96F8E02FA128BC005A915D /* Resources */,
+				9B421FE02FA1411000F2D0C8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -105,7 +120,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9B96F8E02FA128BC005A915D /* Resources */ = {
+		9B421FE02FA1411000F2D0C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
