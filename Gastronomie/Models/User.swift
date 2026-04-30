@@ -23,13 +23,13 @@ struct User: Identifiable {
     let xp: Int
     let points: Int
     let rank: Int
-    let registredRecipes: [Recipe]
+    var registeredRecipes: [UUID]
     // Pas encore de badge
     //let badges: [Badge]
 }
 
 extension User {
-    static let preview: User = User(
+    static var preview: User = User(
         firstName: "Marc",
         lastName: "Leroy",
         avatarImage: "avatar1",
@@ -37,11 +37,21 @@ extension User {
         xp: 5900,
         points: 750,
         rank: 56,
-        registredRecipes: [
-            Recipe.preview,
-            Recipe.preview,
-            Recipe.preview,
-            Recipe.preview
-        ]
+        registeredRecipes: []
     )
+    
+    init(recipeService: RecipeServiceProtocol = RecipeService()) {
+        let recipesIDs: [UUID] = Array(recipeService.fetchAll().prefix(6).map{$0.id})
+        
+        self.init(
+            firstName: User.preview.firstName,
+            lastName: User.preview.lastName,
+            avatarImage: User.preview.avatarImage,
+            genre: User.preview.genre,
+            xp: User.preview.xp,
+            points: User.preview.points,
+            rank: User.preview.rank,
+            registeredRecipes: recipesIDs
+        )
+    }
 }
