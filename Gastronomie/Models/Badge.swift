@@ -11,3 +11,7 @@ struct Badge: Identifiable {
     let id: UUID = UUID()
     let image : String
 }
+
+extension Badge {
+    static let preview: Badge = Badge(image: "badge")
+}
