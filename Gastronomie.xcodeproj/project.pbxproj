@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9BE09F042FA35402000E4C71 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BE09F032FA35402000E4C71 /* Roboto-Italic.ttf */; };
+		9BE09F052FA35402000E4C71 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BE09F022FA35402000E4C71 /* Roboto.ttf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		9B96F8E22FA128BC005A915D /* Gastronomie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gastronomie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE09F022FA35402000E4C71 /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roboto.ttf; sourceTree = "<group>"; };
+		9BE09F032FA35402000E4C71 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -15,8 +22,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Components/.gitkeep,
-				Extensions/.gitkeep,
 				Features/.gitkeep,
+				Info.plist,
 			);
 			target = 9B96F8E12FA128BC005A915D /* Gastronomie */;
 		};
@@ -47,6 +54,7 @@
 		9B96F8D92FA128BC005A915D = {
 			isa = PBXGroup;
 			children = (
+				9BE09F012FA353EC000E4C71 /* Fonts */,
 				9B96F8E42FA128BC005A915D /* Gastronomie */,
 				9B96F8E32FA128BC005A915D /* Products */,
 			);
@@ -58,6 +66,15 @@
 				9B96F8E22FA128BC005A915D /* Gastronomie.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9BE09F012FA353EC000E4C71 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9BE09F022FA35402000E4C71 /* Roboto.ttf */,
+				9BE09F032FA35402000E4C71 /* Roboto-Italic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +141,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE09F042FA35402000E4C71 /* Roboto-Italic.ttf in Resources */,
+				9BE09F052FA35402000E4C71 /* Roboto.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +290,7 @@
 				DEVELOPMENT_TEAM = WS7ZBT36WS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gastronomie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +323,7 @@
 				DEVELOPMENT_TEAM = WS7ZBT36WS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gastronomie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
