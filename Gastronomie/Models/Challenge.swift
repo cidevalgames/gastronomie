@@ -12,3 +12,10 @@ struct Challenge : Identifiable {
     let title : String
     let points : Int
 }
+
+extension Challenge {
+    static let preview: Challenge = Challenge(
+        title: "Cuisiner une recette avec une difficulté de 3 étoiles",
+        points: 10
+    )
+}

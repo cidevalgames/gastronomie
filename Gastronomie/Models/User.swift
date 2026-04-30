@@ -21,11 +21,27 @@ struct User: Identifiable {
     let avatarImage: String
     let genre: Genre
     let xp: Int
-    let point: Int
+    let points: Int
     let rank: Int
     let registredRecipes: [Recipe]
     // Pas encore de badge
     //let badges: [Badge]
 }
 
-//let profile = User(firstName: "Léa", lastName: "Dufour", avatarImage: "https://avatars.dicebear.com/api/male/1234567890.svg", genre: .female, xp: 100, point: 100, rank: 1, registredRecipes: [])
+extension User {
+    static let preview: User = User(
+        firstName: "Marc",
+        lastName: "Leroy",
+        avatarImage: "avatar1",
+        genre: .man,
+        xp: 5900,
+        points: 750,
+        rank: 56,
+        registredRecipes: [
+            Recipe.preview,
+            Recipe.preview,
+            Recipe.preview,
+            Recipe.preview
+        ]
+    )
+}
