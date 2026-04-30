@@ -6,9 +6,14 @@
 //
 
 import Foundation
+
 struct Gift: Identifiable {
     let id: UUID = UUID()
     let image: String
+}
+
+extension Gift {
+    static let preview: Gift = Gift(image: "gift0")
 }
 
 //let gifts: [Gift] = [
