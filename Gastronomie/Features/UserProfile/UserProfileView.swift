@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    @State var viewModel: UserProfileViewModel = UserProfileViewModel()
+    
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 24) {
                 // Profile
                 HStack(alignment: .top, spacing: 16) {
-                    Image(User.preview.avatarImage)
+                    Image(viewModel.avatarImage)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 128, height: 128)
@@ -22,7 +24,7 @@ struct UserProfileView: View {
                     
                     // Profile details
                     VStack {
-                        Text("\(User.preview.firstName) \(User.preview.lastName)")
+                        Text(viewModel.fullName)
                             .font(.profileName)
                             .foregroundStyle(.richMahogany)
                             .lineLimit(1)
@@ -30,15 +32,15 @@ struct UserProfileView: View {
                         
                         Spacer()
                         
-                        ProfileDetail(icon: "figure.stand", text: User.preview.genre.rawValue)
+                        ProfileDetail(icon: "figure.stand", text: viewModel.genreString)
                         
                         Spacer()
                         
-                        ProfileDetail(icon: "arrow.up.circle", text: String(User.preview.xp.formatted()))
+                        ProfileDetail(icon: "arrow.up.circle", text: viewModel.xpString)
                         
                         Spacer()
                         
-                        ProfileDetail(icon: "bitcoinsign.circle", text: String(User.preview.points.formatted()))
+                        ProfileDetail(icon: "bitcoinsign.circle", text: viewModel.pointsString)
                         
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -75,7 +77,7 @@ struct UserProfileView: View {
                             GridItem(.flexible())
                         ]
                     ) {
-                        ForEach(User.preview.registeredRecipes) { recipe in
+                        ForEach(viewModel.registeredRecipes) { recipe in
                             RecipeProfileCard(image: recipe.image, title: recipe.title)
                         }
                     }
