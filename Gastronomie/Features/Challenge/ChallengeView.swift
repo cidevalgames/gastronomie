@@ -32,7 +32,7 @@ struct ChallengeView: View {
                     .padding()
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(BadgeService().fetchAll()) { badge in
+                    ForEach(viewModel.userBadgesImages) { badge in
                         BadgeCard(badge: badge)
                     }
                 }
