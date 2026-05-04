@@ -40,7 +40,7 @@ extension User {
         registeredRecipes: []
     )
     
-    init(recipeService: RecipeServiceProtocol = RecipeService()) {
+    init(recipeService: RecipeProvider = RecipeService()) {
         let recipesIDs: [UUID] = Array(recipeService.fetchAll().prefix(6).map{$0.id})
         
         self.init(
