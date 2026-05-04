@@ -41,7 +41,7 @@ struct RecipeService: RecipeProvider {
                     "Passer au chinois pour une finition veloutée, rectifier l'assaisonnement et servir bien chaud."
                 ],
                 communityImages: []
-            )
+            ), categories:[Category.starter]
         ),
         
         // 2. Tartare Saumon & Yuzu
@@ -69,7 +69,7 @@ struct RecipeService: RecipeProvider {
                     "Utiliser un emporte-pièce pour dresser le tartare au centre de l'assiette en pressant légèrement."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.starter, Category.japanese]
         ),
         
         // 3. Risotto de Coquillettes Truffé
@@ -99,7 +99,7 @@ struct RecipeService: RecipeProvider {
                     "Incorporer l'huile de truffe délicatement, couvrir 2 minutes avant de servir."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.main, Category.italian]
         ),
         
         // 4. Magret de Canard au Porto
@@ -131,7 +131,7 @@ struct RecipeService: RecipeProvider {
                     "Baissez le feu au minimum. Ajoutez les dés de beurre froid un par un en remuant sans arrêt avec un fouet."
                 ],
                 communityImages: ["magret_canard_porto_community_0", "magret_canard_porto_community_1", "magret_canard_porto_community_2"]
-            )
+            ), categories: [Category.main, Category.french]
         ),
         
         // 5. Cabillaud en Croûte d'Herbes
@@ -159,7 +159,7 @@ struct RecipeService: RecipeProvider {
                     "Finir 1 minute sous le grill pour dorer la croûte."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.main]
         ),
         
         // 6. Saint-Jacques & Espuma Chorizo
@@ -186,7 +186,7 @@ struct RecipeService: RecipeProvider {
                     "Dresser immédiatement avec une pointe d'espuma aérien."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.starter]
         ),
         
         // 7. Bœuf en Croûte de Brioche
@@ -213,7 +213,7 @@ struct RecipeService: RecipeProvider {
                     "Laisser reposer 15 minutes avant de trancher."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.main]
         ),
         
         // 8. La Sphère Chocolatée Surprise
@@ -238,7 +238,7 @@ struct RecipeService: RecipeProvider {
                     "Verser le coulis brûlant au moment de servir pour faire fondre la sphère."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.dessert]
         ),
         
         // 9. Café au Maroilles
@@ -261,7 +261,7 @@ struct RecipeService: RecipeProvider {
                     "Servir le café très chaud et pratiquer l'accord traditionnel par trempage ou alternance."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.starter]
         ),
         
         // 10. Œufs Mayonnaise
@@ -286,7 +286,7 @@ struct RecipeService: RecipeProvider {
                     "Napper chaque œuf de mayonnaise jusqu'à le masquer totalement."
                 ],
                 communityImages: []
-            )
+            ), categories: [Category.starter, Category.french]
         )
     ]
     
