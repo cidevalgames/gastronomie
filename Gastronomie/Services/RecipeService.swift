@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol RecipeServiceProtocol {
+protocol RecipeProvider {
     func fetchAll() -> [Recipe]
 }
 
-struct RecipeService: RecipeServiceProtocol {
+struct RecipeService: RecipeProvider {
     private let allRecipes: [Recipe] = [
         // 1. Velouté Butternut & Vanille
         Recipe(
