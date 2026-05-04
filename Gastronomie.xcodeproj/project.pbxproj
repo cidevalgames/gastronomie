@@ -21,8 +21,6 @@
 		9B421FE12FA1411100F2D0C8 /* Exceptions for "Gastronomie" folder in "Gastronomie" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Components/.gitkeep,
-				Features/.gitkeep,
 				Info.plist,
 			);
 			target = 9B96F8E12FA128BC005A915D /* Gastronomie */;
