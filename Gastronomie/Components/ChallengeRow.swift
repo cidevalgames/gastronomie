@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ChallengeRow: View {
-        var score: Int
-        var text: String
+        var points: Int
+        var title: String
     
         var body: some View {
             ZStack {
                 HStack {
-                    Text("\(score)")
+                    Text("\(points)")
                         .font(.challengeMoney)
                         .foregroundStyle(Color.darkWine)
                         .padding()
@@ -22,7 +22,7 @@ struct ChallengeRow: View {
                         .cornerRadius(100)
                     
                     Spacer()
-                    Text(text)
+                    Text(title)
                         .font(.challengeTitle)
                         .foregroundStyle(.brightSnow)
                         .multilineTextAlignment(.center)
@@ -39,8 +39,6 @@ struct ChallengeRow: View {
 
 
 #Preview {
-    ChallengeRow(score: 10, text: "Cuisiner une recette avec une difficulté de 3 étoiles")
-    ChallengeRow(score: 20, text: "Mettre une recette en favoris")
-    ChallengeRow(score: 50, text: "Participer à un tirage au sort" )
+    ChallengeRow(points: Challenge.preview.points, title: Challenge.preview.title)
 }
 
