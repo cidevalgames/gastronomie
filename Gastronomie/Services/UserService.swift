@@ -27,7 +27,7 @@ struct UserService: UserProvider, SessionProvider {
     
     var currentUser: User
     
-    init(recipeService: RecipeServiceProtocol = RecipeService()) {
+    init(recipeService: RecipeProvider = RecipeService()) {
         self.currentUser = allUsers[0]
         // Select 6 first recipes just for mockup
         self.currentUser.registeredRecipes = Array(recipeService.fetchAll().prefix(6).map{$0.id})
