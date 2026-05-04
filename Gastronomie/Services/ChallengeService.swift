@@ -11,7 +11,11 @@ protocol ChallengeProvider {
     func fetchAll() -> [Challenge]
 }
 
-struct ChallengeService: ChallengeProvider {
+protocol ShuffledChallengesProvider {
+    func fetchShuffledChallenges() -> [Challenge]
+}
+
+struct ChallengeService: ChallengeProvider, ShuffledChallengesProvider {
     private let allChallenges: [Challenge] = [
         Challenge(title: "Cuisiner une recette avec une difficulté de 3 étoiles", points: 10),
         Challenge(title: "Mettre une recette en favoris", points: 20),
@@ -20,5 +24,9 @@ struct ChallengeService: ChallengeProvider {
     
     func fetchAll() -> [Challenge] {
         return allChallenges
+    }
+    
+    func fetchShuffledChallenges() -> [Challenge] {
+        return allChallenges.shuffled()
     }
 }
