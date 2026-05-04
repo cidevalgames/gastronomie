@@ -21,7 +21,7 @@
                     Spacer()
                     
                     Text(text)
-                        .font(.button2)
+                        .font(.button)
                         .foregroundStyle(.brightSnow)
                     
                     Spacer()
