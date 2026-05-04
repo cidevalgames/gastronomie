@@ -14,6 +14,7 @@ struct Recipe: Identifiable {
     let description: String
     let stats: RecipeStats
     let details: RecipeDetails
+    let categories: [Category]
 }
 
 struct RecipeStats {
@@ -28,6 +29,19 @@ struct RecipeDetails {
     let ingredients: [String]
     let instructions: [String]
     let communityImages: [String]
+}
+
+enum Category: String, CaseIterable {
+    case starter = "Entrée"
+    case main = "Plat principal"
+    case dessert = "Dessert"
+    case french = "Cuisine Française"
+    case african = "Cuisine Africaine"
+    case japanese = "Cuisine japonaise"
+    case italian = "Cuisine Italienne"
+    case indian = "Cuisine Indienne"
+    case mediterranean = "Cuisine méditerranéenne"
+    case vegan = "Cuisine végétarienne"
 }
 
 extension Recipe {
@@ -76,6 +90,10 @@ extension Recipe {
                 "magret_canard_porto_community_1",
                 "magret_canard_porto_community_2"
             ]
-        )
+        ),
+        categories: [
+            Category.main,
+            Category.french
+        ]
     )
 }
