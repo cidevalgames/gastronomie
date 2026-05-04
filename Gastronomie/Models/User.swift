@@ -24,7 +24,7 @@ struct User: Identifiable {
     let points: Int
     let rank: Int
     var registeredRecipes: [Recipe]
-    //let badges: [Badge]
+    var badges: [Badge]
 }
 
 extension User {
@@ -32,8 +32,10 @@ extension User {
         return User()
     }
     
-    init(recipeService: RecipeProvider = RecipeService()) {
+    init(recipeService: RecipeProvider = RecipeService(),
+         badgeService: BadgeProvider = BadgeService()) {
         let recipes: [Recipe] = Array(recipeService.fetchAll().prefix(6))
+        let badges: [Badge] = Array(badgeService.fetchAll().prefix(6))
         
         self.init(
             firstName: "Marc",
@@ -43,7 +45,8 @@ extension User {
             xp: 5900,
             points: 750,
             rank: 56,
-            registeredRecipes: recipes
+            registeredRecipes: recipes,
+            badges: badges
         )
     }
 }
