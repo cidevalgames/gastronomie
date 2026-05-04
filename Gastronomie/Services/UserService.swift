@@ -30,7 +30,7 @@ struct UserService: UserProvider, SessionProvider {
     init(recipeService: RecipeProvider = RecipeService()) {
         self.currentUser = allUsers[0]
         // Select 6 first recipes just for mockup
-        self.currentUser.registeredRecipes = Array(recipeService.fetchAll().prefix(6).map{$0.id})
+        self.currentUser.registeredRecipes = Array(recipeService.fetchAll().prefix(6))
     }
     
     func fetchAll() -> [User] {
