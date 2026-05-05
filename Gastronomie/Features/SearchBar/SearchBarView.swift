@@ -8,30 +8,16 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    
+    @State var viewModel: SearchBarViewModel = SearchBarViewModel()
     @State private var searchText = ""
-    
-    let categories: [String] = [
-        "Recettes 🇫🇷",
-        "Recettes 🇯🇵",
-        "Recettes 🇮🇹",
-        "Recettes 🇮🇳",
-        "Recettes 🌍",
-        "Recettes 🇹🇷",
-        "Poisson 🐟",
-        "Vegan 🥦",
-        "Boeuf 🥩",
-        "Patisserie 🍰",
-        "Poulet 🍗"
-    ]
     
     //  Filtrage
     
     var filteredCategories: [String] {
         if searchText.isEmpty {
-            return categories
+            return viewModel.categories
         } else {
-            return categories.filter { category in
+            return viewModel.categories.filter { category in
                 category.localizedCaseInsensitiveContains(searchText)
             }
         }
@@ -71,7 +57,7 @@ struct SearchBarView: View {
                 ForEach(filteredCategories, id: \.self) { category in
                     
                     Text(category)
-                        .font(.button)
+                        .font(.button3)
                         .frame(width: 168, height: 40)
                         .background(.brightSnow)
                         .clipShape(RoundedRectangle(cornerRadius: 80))
@@ -82,10 +68,10 @@ struct SearchBarView: View {
                 }
             }
             .padding()
-            }
-            Spacer()
+        }
+        Spacer()
         
-        .padding(.top)
+            .padding(.top)
     }
 }
 
