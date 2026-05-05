@@ -23,6 +23,7 @@ struct LeaderboardCard: View {
                 
                 Text("\(user.xp) xp")
                     .font(.leaderboardCardXp)
+                    .foregroundStyle(.richMahogany)
             }
             
             Spacer()
