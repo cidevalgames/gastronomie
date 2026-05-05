@@ -7,11 +7,10 @@
 import SwiftUI
 
 struct RecipeListView: View {
+    @State var viewModel: RecipeListViewModel = RecipeListViewModel()
     
     var body: some View {
-        
         ScrollView {
-            
             // Présentation de l'utilisateur
             
             VStack {
@@ -20,7 +19,7 @@ struct RecipeListView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(.richMahogany)
                 
-                Text("Marc Hamill")
+                Text(viewModel.currentUserName)
                     .font(.pageTitle)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -38,23 +37,7 @@ struct RecipeListView: View {
                     
                     // rajouter icone étoiles
                     
-                    Image(Recipe.preview.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 100)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 0)
-                    
-                    VStack {
-                        Text("Café au Maroilles")
-                            .font(.recipeCardTitle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        Spacer()
-                        
-                        Text("Osez l'expérience ultime du Nord ! Ce défi vous apprend à équilibrer la puissance d'un fromage de caractère...")
-                            .font(.recipeCardDetail)
-                    }
+                    RecipeCard(title: viewModel.dailyRecipe.title, image: viewModel.dailyRecipe.image, description: viewModel.dailyRecipe.description)
                 }
                 .padding(6)
                 .background(.brightSnow)
@@ -67,31 +50,8 @@ struct RecipeListView: View {
                     .font(.pageTitle)
                     .foregroundStyle(.richMahogany)
                 
-                ForEach([Recipe.preview, Recipe.preview, Recipe.preview, Recipe.preview, Recipe.preview, Recipe.preview]) { recipe in
-                    HStack {
-                        Image(Recipe.preview.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 0)
-                        
-                        VStack {
-                            Text(Recipe.preview.title)
-                                .frame(maxWidth: .infinity,
-                                       alignment: .leading)
-                                .font(.recipeCardTitle)
-                            
-                            Spacer()
-                            Text(recipe.description)
-                            .font(.recipeCardDetail)
-                            .lineLimit(3)
-                        }
-                    }
-                    .padding(6)
-                    .background(.brightSnow)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .shadow(color: .black.opacity(0.25), radius: 8)
+                ForEach(viewModel.recipes) { recipe in
+                    RecipeCard(title: recipe.title, image: recipe.image, description: recipe.description)
                 }
             }
             .padding()
