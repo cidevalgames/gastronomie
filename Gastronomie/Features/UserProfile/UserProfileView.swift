@@ -78,7 +78,7 @@ struct UserProfileView: View {
                         ]
                     ) {
                         ForEach(viewModel.registeredRecipes) { recipe in
-                            RecipeProfileCard(image: recipe.image, title: recipe.title)
+                            RecipeProfileCard(recipe: recipe)
                         }
                     }
                 }

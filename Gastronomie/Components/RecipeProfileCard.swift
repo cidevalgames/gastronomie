@@ -8,19 +8,18 @@
 import SwiftUI
 
 struct RecipeProfileCard: View {
-    let image: String
-    let title: String
     
+    var recipe: Recipe
     var body: some View {
         VStack {
-            Image(image)
+            Image(recipe.image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 164, height: 164)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .shadow(color: .black.opacity(0.25), radius: 8)
             
-            Text(title)
+            Text(recipe.title)
                 .font(.profileRecipeTitle)
                 .foregroundStyle(.richMahogany)
                 .lineLimit(1)
@@ -29,5 +28,5 @@ struct RecipeProfileCard: View {
 }
 
 #Preview {
-    RecipeProfileCard(image: Recipe.preview.image, title: Recipe.preview.title)
+    RecipeProfileCard(recipe: Recipe.preview)
 }
