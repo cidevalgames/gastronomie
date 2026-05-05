@@ -32,16 +32,16 @@ struct RecipeDetails {
 }
 
 enum Category: String, CaseIterable {
-    case starter = "Entrée"
-    case main = "Plat principal"
-    case dessert = "Dessert"
-    case french = "Cuisine Française"
-    case african = "Cuisine Africaine"
-    case japanese = "Cuisine japonaise"
-    case italian = "Cuisine Italienne"
-    case indian = "Cuisine Indienne"
-    case mediterranean = "Cuisine méditerranéenne"
-    case vegan = "Cuisine végétarienne"
+    case starter = "Entrée 🫒"
+    case main = "Plat principal 🍽️"
+    case dessert = "Dessert 🍮"
+    case french = "Recettes 🇫🇷"
+    case african = "Africaines 🌍"
+    case japanese = "Recettes 🇯🇵"
+    case italian = "Recettes 🇮🇹"
+    case indian = "Recettes 🇮🇳"
+    case mediterranean = "Méditerranéen 🏖️"
+    case vegan = "Vegan 🌱"
 }
 
 extension Recipe {
