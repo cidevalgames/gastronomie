@@ -8,27 +8,22 @@
 import SwiftUI
 
 struct InfiniteCarousel: View {
+    let gifts: [Gift]
+    
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                Image("gift0")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 220, height: 194)
-                Image("gift1")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 220, height: 194)
-                Image("gift2")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 220, height: 194)
-                    
+                ForEach(gifts) { gift in
+                    Image(gift.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 220, height: 194)
+                }
             }
         }
     }
 }
 
 #Preview {
-    InfiniteCarousel()
+    InfiniteCarousel(gifts: [Gift.preview, Gift.preview, Gift.preview])
 }
