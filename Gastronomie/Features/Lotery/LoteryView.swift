@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LoteryView: View {
+    @State var viewModel: LoteryViewModel = LoteryViewModel()
     
     var body: some View {
         NavigationStack {
-            
             VStack(alignment: .center, spacing: 20) {
                 Text("Loterie")
                     .font(.pageTitle)
@@ -23,7 +23,7 @@ struct LoteryView: View {
                     .padding()
                     .multilineTextAlignment(.center)
                 
-                InfiniteCarousel()
+                InfiniteCarousel(gifts: viewModel.gifts)
                     
                 Text("Et bien d'autres...")
                     .font(.pageTitle)
