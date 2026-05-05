@@ -9,19 +9,6 @@ import SwiftUI
 
 struct SearchBarView: View {
     @State var viewModel: SearchBarViewModel = SearchBarViewModel()
-    @State private var searchText = ""
-    
-    //  Filtrage
-    
-    var filteredCategories: [String] {
-        if searchText.isEmpty {
-            return viewModel.categories
-        } else {
-            return viewModel.categories.filter { category in
-                category.localizedCaseInsensitiveContains(searchText)
-            }
-        }
-    }
     
     let columns: [GridItem] = [
         GridItem(.flexible()),
@@ -29,49 +16,48 @@ struct SearchBarView: View {
     ]
     
     var body: some View {
-        VStack(spacing: 20) {
-            
-            // Barre de recherche
-            
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
+        NavigationStack {
+            VStack(spacing: 20) {
                 
-                TextField("Search..", text: $searchText)
+                // Barre de recherche
                 
-                if !searchText.isEmpty {
-                    Button(action: { searchText = "" }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
+                if viewModel.emptySearchTerm {
+                    
+                    //  Grille des catégories de recette
+                    
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(viewModel.categories, id: \.self) { category in
+                            
+                            Text(category)
+                                .font(.button3)
+                                .frame(width: 168, height: 40)
+                                .background(.brightSnow)
+                                .clipShape(RoundedRectangle(cornerRadius: 80))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 80)
+                                        .stroke(Color.richMahogany, lineWidth: 2)
+                                )
+                                .shadow(color: .black.opacity(0.25), radius: 8)
+                        }
+                    }
+                    .padding()
+                    
+                } else {
+                    List {
+                        ForEach(viewModel.filteredRecipes) { recipe in
+                            NavigationLink {
+                                RecipeDetailView(recipe: recipe)
+                            } label: {
+                                SearchRecipeRow(image: recipe.image, title: recipe.title)
+                            }
+                        }
                     }
                 }
             }
-            .padding(12)
-            .background(Color(.systemGray6))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
-            .padding(.horizontal)
             
-            //  Grille des catégories de recette
-            
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(filteredCategories, id: \.self) { category in
-                    
-                    Text(category)
-                        .font(.button3)
-                        .frame(width: 168, height: 40)
-                        .background(.brightSnow)
-                        .clipShape(RoundedRectangle(cornerRadius: 80))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 80)
-                                .stroke(Color.richMahogany, lineWidth: 2))
-                        .shadow(color: .black.opacity(0.25), radius: 8)
-                }
-            }
-            .padding()
+            Spacer()
         }
-        Spacer()
-        
-            .padding(.top)
+        .searchable(text: $viewModel.searchTerm, prompt: "Rechercher une recette")
     }
 }
 
