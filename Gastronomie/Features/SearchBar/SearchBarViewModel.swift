@@ -10,9 +10,11 @@ import Observation
 
 @Observable
 class SearchBarViewModel {
-    private let recipeService: RecipeProvider
+    private let recipeService: RecipeProvider & RecipeSearchable
     
-    init(recipeService: RecipeProvider = RecipeService()) {
+    var searchTerm: String = ""
+    
+    init(recipeService: RecipeProvider & RecipeSearchable = RecipeService()) {
         self.recipeService = recipeService
     }
     
@@ -20,5 +22,11 @@ class SearchBarViewModel {
         Category.allCases.map(\.rawValue)
     }
     
-    var searchTerm: String = ""
+    var filteredRecipes: [Recipe] {
+        recipeService.filter(searchTerm: searchTerm)
+    }
+    
+    var emptySearchTerm: Bool {
+        searchTerm.isEmpty
+    }
 }
