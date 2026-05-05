@@ -11,7 +11,11 @@ protocol RecipeProvider {
     func fetchAll() -> [Recipe]
 }
 
-struct RecipeService: RecipeProvider {
+protocol RecipeSearchable {
+    func filter(searchTerm: String) -> [Recipe]
+}
+
+struct RecipeService: RecipeProvider, RecipeSearchable {
     private let allRecipes: [Recipe] = [
         // 1. Velouté Butternut & Vanille
         Recipe(
@@ -292,5 +296,12 @@ struct RecipeService: RecipeProvider {
     
     func fetchAll() -> [Recipe] {
         return allRecipes
+    }
+    
+    func filter(searchTerm: String) -> [Recipe] {
+        guard !searchTerm.isEmpty else { return allRecipes }
+        return allRecipes.filter {
+            $0.title.localizedStandardContains(searchTerm)
+        }
     }
 }
