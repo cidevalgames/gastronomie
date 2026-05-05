@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct LeaderboardView: View {
-    let leaderboardUsers: [User] = [
-        .preview,
-        .preview,
-        .preview
-    ]
+    @State var viewModel: LeaderboardViewModel = LeaderboardViewModel()
     
     let isCurrentUser = false
     
@@ -23,11 +19,11 @@ struct LeaderboardView: View {
                 .bold()
                 .foregroundStyle(.richMahogany)
             
-            PodiumView(user1: User.preview, user2: User.preview, user3: User.preview)
+            PodiumView(user1: viewModel.threeFirstUsers[0], user2: viewModel.threeFirstUsers[1], user3: viewModel.threeFirstUsers[2])
             
             VStack(spacing: 8) {
-                ForEach(leaderboardUsers) { user in
-                    LeaderboardCard(user: user, isCurrentUser: isCurrentUser)
+                ForEach(viewModel.usersAroundCurrentUser as! [User]) { user in
+                    LeaderboardCard(user: user, isCurrentUser: viewModel.isCurrentUser(user: user))
                 }
             }
             .frame(height: 324)
