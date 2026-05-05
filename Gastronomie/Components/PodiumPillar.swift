@@ -31,6 +31,7 @@ struct PodiumPillar: View {
                 .shadow(color: .black.opacity(0.25), radius: 8)
                 
                 Text("\(user.xp.formatted()) xp")
+                    .foregroundStyle(.richMahogany)
             }
         }
         .frame(maxWidth: .infinity)
