@@ -17,6 +17,7 @@ extension Font {
     // Buttons
     static let button = Font.custom("Roboto", size: 24)
     static let button2 = Font.custom("Roboto", size: 20)
+    static let button3 = Font.custom("Roboto", size: 16)
     
     // Recipe card
     static let recipeCardTitle = Font.custom("Roboto", size: 16, relativeTo: .headline).weight(.bold)
@@ -57,6 +58,7 @@ extension Font {
         // Buttons
         Text("Button").font(.button)
         Text("Button 2").font(.button2)
+        Text("Button 3").font(.button3)
         
         // Recipe card
         Text("Recipe card title").font(.recipeCardTitle)
