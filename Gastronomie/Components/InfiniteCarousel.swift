@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct InfiniteCarousel: View {
-    let gifts: [Gift]
+    let images: [String]
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach(gifts) { gift in
-                    Image(gift.image)
+        TabView {
+            ForEach(0 ..< 1000, id: \.self) { index in
+                VStack {
+                    Image(images[index % images.count])
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 220, height: 194)
+                        .scaledToFill()
+                        .containerRelativeFrame(.vertical)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
                 }
             }
         }
+        .tabViewStyle(.page)
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }
 
 #Preview {
-    InfiniteCarousel(gifts: [Gift.preview, Gift.preview, Gift.preview])
+    InfiniteCarousel(images: [Gift.preview.image, Gift.preview.image, Gift.preview.image])
 }
