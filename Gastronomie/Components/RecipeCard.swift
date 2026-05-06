@@ -8,29 +8,44 @@
 import SwiftUI
 
 struct RecipeCard: View {
-    var title: String
-    var image: String
-    var description: String
+    var recipe: Recipe
     
     var body: some View {
         HStack {
-            Image(image)
+            Image(recipe.image)
                 .resizable()
-                .scaledToFit()
-                .frame(maxWidth: 100)
+                .scaledToFill()
+                .frame(width: 88, height: 88)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: .black.opacity(0.3), radius: 4, x: 0, y: 0)
             
-            VStack {
-                Text(title)
-                    .frame(maxWidth: .infinity,
-                           alignment: .leading)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(recipe.title)
+                    .lineLimit(1)
+                    .frame(alignment: .leading)
                     .font(.recipeCardTitle)
+                    .foregroundStyle(.richMahogany)
                 
-                Spacer()
-                Text(description)
+                DifficultyStars(stars: recipe.stats.stars)
+                    .frame(height: 16)
+                
+                HStack(spacing: 4) {
+                    Image(systemName: "clock")
+                    Text("\(recipe.stats.time) min")
+                    Text("•")
+                    Image(systemName: "arrow.up.circle")
+                    Text("\(recipe.stats.xp)")
+                    Text("•")
+                    Image(systemName: "bitcoinsign.circle")
+                    Text("\(recipe.stats.money)")
+                }
+                .foregroundStyle(.darkWine)
                 .font(.recipeCardDetail)
-                .lineLimit(3)
+                
+                Text(recipe.description)
+                    .font(.recipeCardDetail)
+                    .foregroundStyle(.richMahogany)
+                    .lineLimit(2)
             }
         }
         .padding(6)
@@ -41,5 +56,5 @@ struct RecipeCard: View {
 }
 
 #Preview {
-    RecipeCard(title: Recipe.preview.title, image: Recipe.preview.image, description: Recipe.preview.description)
+    RecipeCard(recipe: Recipe.preview)
 }
