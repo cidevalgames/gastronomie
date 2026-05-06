@@ -11,11 +11,14 @@ import Observation
 @Observable
 class LoteryViewModel {
     private let giftService: GiftProvider
-    
-    let gifts: [Gift]
+    private let gifts: [Gift]
     
     init(giftService: GiftProvider = GiftService()) {
         self.giftService = giftService
         self.gifts = giftService.fetchAll()
+    }
+    
+    var giftsImages: [String] {
+        Array(gifts.map{ $0.image })
     }
 }
