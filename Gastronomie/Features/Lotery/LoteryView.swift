@@ -12,7 +12,7 @@ struct LoteryView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .center, spacing: 20) {
+            VStack(alignment: .center, spacing: 32) {
                 Text("Loterie")
                     .font(.pageTitle)
                     .bold()
@@ -20,15 +20,15 @@ struct LoteryView: View {
                 Text("Ce que les participants ont gagné...")
                     .font(.pageTitle)
                     .foregroundStyle(.richMahogany)
-                    .padding()
                     .multilineTextAlignment(.center)
                 
-                InfiniteCarousel(gifts: viewModel.gifts)
+                InfiniteCarousel(images: viewModel.giftsImages)
+                    .frame(height: 300)
                     
                 Text("Et bien d'autres...")
                     .font(.pageTitle)
-                    .padding()
                     .foregroundStyle(.richMahogany)
+                
                 HStack(spacing: 4) {
                     Text("Solde: 750")
                         .font(.loteryMoney)
@@ -58,12 +58,12 @@ struct LoteryView: View {
                     .padding()
                     .background(.darkWine)
                     .cornerRadius(40)
-                    .padding()
                 }
                 
                 Spacer()
                 
             }
+            .padding()
         }
     }
 }
