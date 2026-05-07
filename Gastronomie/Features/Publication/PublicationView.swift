@@ -14,6 +14,9 @@ struct PublicationView: View {
     @State private var IsExpanded = false
     @State private var categories: Category = .starter
     @State private var dificulty = Int (0)
+    @State var publicationModal: Bool = false
+    @State var isParticipating: Bool = false
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -53,7 +56,7 @@ struct PublicationView: View {
                         .tint(Color.yellow)
                     }
                     
-
+                    
                     TextField("", text: $title)
                         .frame(height: 24)
                         .padding(10)
@@ -72,7 +75,29 @@ struct PublicationView: View {
                         .shadow(radius: 4)
                     
                     
-                    MainButton(text: "Publier")
+                    Button {
+                        isParticipating = true
+                    } label: {
+                        HStack {
+                            Spacer()
+                            
+                            Text("Publier")
+                                .font(.button)
+                                .foregroundStyle(.brightSnow)
+                            
+                            Spacer()
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(Color.darkWine)
+                    .cornerRadius(24)
+                    .shadow(color: .black.opacity(0.25), radius: 8)
+                    .sheet(isPresented: $isParticipating, content: {
+                        PublicationExtra(text:"Publié", image:"checkmark")
+                            .ignoresSafeArea()
+                    })
+                    
                 }
                 .padding(.horizontal)
             }.background(Color.brightSnow)
