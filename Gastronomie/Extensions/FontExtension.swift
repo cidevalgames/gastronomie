@@ -46,6 +46,9 @@ extension Font {
     static let recipeDetailH2 = Font.custom("Georgia", size: 16).weight(.bold)
     static let recipeDetailInfo = Font.custom("Roboto", size: 12).weight(.light)
     static let recipeDetailBody = Font.custom("Roboto", size: 16)
+    
+    // Publication
+    static let publicationTitle2 = Font.custom("Georgia", size: 24)
 
 }
 
