@@ -18,10 +18,10 @@ struct Recipe: Identifiable {
 }
 
 struct RecipeStats {
-    let stars: Int // between 1 and 5
+    let difficulty: Int // between 1 and 5
     let time: Int // in minutes
     let xp: Int
-    let money: Int
+    let points: Int
 }
 
 struct RecipeDetails {
@@ -50,10 +50,10 @@ extension Recipe {
         image: "magret_canard_porto",
         description: "Maîtrisez la cuisson rosée du magret et réalisez une réduction de Porto miroir. Ce plat exige de la rigueur sur le temps de repos de la viande et la finesse d'une mousseline de carottes lisse. Un passage obligé pour ceux qui visent le niveau supérieur en cuisine traditionnelle française.",
         stats: RecipeStats(
-            stars: 3,
+            difficulty: 3,
             time: 45,
             xp: 650,
-            money: 80,
+            points: 80,
         ),
         details: RecipeDetails(
             kitchenEquipments: [

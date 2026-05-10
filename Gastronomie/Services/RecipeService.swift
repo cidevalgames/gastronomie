@@ -22,7 +22,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Velouté Butternut & Vanille",
             image: "veloute_butternut_vanille",
             description: "Mix douceur et exotisme ! Ce plat t'apprend à gérer les textures crémeuses et à dresser à la louche. Une entrée réconfortante qui désacralise la vanille en version salée. Idéal pour farmer tes premiers XP sans pression et valider ton tutoriel cuisine.",
-            stats: RecipeStats(stars: 1, time: 30, xp: 150, money: 20),
+            stats: RecipeStats(difficulty: 1, time: 30, xp: 150, points: 20),
             details: RecipeDetails(
                 kitchenEquipments: ["Blender haute puissance", "Marmite", "Couteau d'office", "Chinois"],
                 ingredients: [
@@ -53,7 +53,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Tartare Saumon & Yuzu",
             image: "tartare_saumon_yuzu",
             description: "Maîtrise la découpe de précision ! Entre l'acidité du yuzu et le croquant de la pomme, ce tartare est une leçon d'équilibre. Un défi frais pour apprendre à sublimer les produits crus et soigner ton esthétique d'assiette avant de passer au niveau supérieur.",
-            stats: RecipeStats(stars: 2, time: 20, xp: 300, money: 40),
+            stats: RecipeStats(difficulty: 2, time: 20, xp: 300, points: 40),
             details: RecipeDetails(
                 kitchenEquipments: ["Couteau de chef bien affûté", "Culs-de-poule", "Cercle de dressage"],
                 ingredients: [
@@ -81,7 +81,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Risotto de Coquillettes Truffé",
             image: "risotto_coquillettes_truffes",
             description: "Le level-up d'un plat d'enfance. Apprends la technique de l'amidon pour une onctuosité parfaite sans crème. Ce défi intermédiaire t'initie aux produits de luxe avec la truffe, tout en gardant un côté ludique, rassurant et surtout terriblement addictif.",
-            stats: RecipeStats(stars: 2, time: 25, xp: 450, money: 50),
+            stats: RecipeStats(difficulty: 2, time: 25, xp: 450, points: 50),
             details: RecipeDetails(
                 kitchenEquipments: ["Sautante", "Spatule en bois", "Râpe fine"],
                 ingredients: [
@@ -111,7 +111,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Magret de Canard au Porto",
             image: "magret_canard_porto",
             description: "Maîtrisez la cuisson rosée du magret et réalisez une réduction de Porto miroir. Ce plat exige de la rigueur sur le temps de repos de la viande et la finesse d'une mousseline de carottes lisse. Un passage obligé pour ceux qui visent le niveau supérieur en cuisine traditionnelle française.",
-            stats: RecipeStats(stars: 3, time: 45, xp: 650, money: 80),
+            stats: RecipeStats(difficulty: 3, time: 45, xp: 650, points: 80),
             details: RecipeDetails(
                 kitchenEquipments: ["couteau", "poêle", "bol", "papier aluminium", "assiette", "spatule en bois", "fouet"],
                 ingredients: [
@@ -143,7 +143,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Cabillaud en Croûte d'Herbes",
             image: "cabillaud_croutes_d_herbe",
             description: "Travaille les contrastes de textures ! Une croûte herbacée craquante qui protège le nacré du poisson. Ce défi te demande de dompter ton four pour une cuisson parfaite. Un rendu visuel coloré qui boostera ton score de dressage et tes chances au tirage au sort.",
-            stats: RecipeStats(stars: 3, time: 40, xp: 800, money: 100),
+            stats: RecipeStats(difficulty: 3, time: 40, xp: 800, points: 100),
             details: RecipeDetails(
                 kitchenEquipments: ["Mixeur", "Papier sulfurisé", "Plaque de cuisson", "Sonde"],
                 ingredients: [
@@ -171,7 +171,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Saint-Jacques & Espuma Chorizo",
             image: "saint_jacques_espuma_chorizo",
             description: "Entre dans le monde moléculaire. Apprends à utiliser le siphon pour créer un nuage léger et piquant. Le challenge : snacker tes Saint-Jacques pile au moment du service. Un plat complexe qui envoie du lourd sur ton profil et débloque des badges rares.",
-            stats: RecipeStats(stars: 4, time: 50, xp: 1200, money: 180),
+            stats: RecipeStats(difficulty: 4, time: 50, xp: 1200, points: 180),
             details: RecipeDetails(
                 kitchenEquipments: ["Siphon", "Cartouches N2O", "Poêle inox", "Passoire fine"],
                 ingredients: [
@@ -198,7 +198,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Bœuf en Croûte de Brioche",
             image: "boeuf_croute_brioche",
             description: "Un raid légendaire pour les passionnés. Envelopper une pièce de viande sans détremper la pâte demande une précision de métronome. C’est le défi technique par excellence qui sépare les amateurs des futurs chefs. Prépare-toi, c'est du haut niveau !",
-            stats: RecipeStats(stars: 5, time: 90, xp: 2500, money: 350),
+            stats: RecipeStats(difficulty: 5, time: 90, xp: 2500, points: 350),
             details: RecipeDetails(
                 kitchenEquipments: ["Rouleau", "Pinceau", "Sonde de cuisson", "Film alimentaire"],
                 ingredients: [
@@ -225,7 +225,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "La Sphère Chocolatée Surprise",
             image: "sphere_chocolatee_surprise",
             description: "Le Boss Final. Réalise une coque en chocolat ultra-fine qui fond sous un coulis chaud. Patience, tempérage et précision de joaillier sont requis. Réussir ce plat, c'est l'assurance d'exploser le haut du tableau et de remporter les plus gros loots.",
-            stats: RecipeStats(stars: 5, time: 120, xp: 3000, money: 500),
+            stats: RecipeStats(difficulty: 5, time: 120, xp: 3000, points: 500),
             details: RecipeDetails(
                 kitchenEquipments: ["Moule demi-sphère silicone", "Thermomètre", "Poche à douille"],
                 ingredients: [
@@ -250,7 +250,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Café au Maroilles",
             image: "cafe_au_maroilles",
             description: "Osez l'expérience ultime du Nord ! Ce défi vous apprend à équilibrer la puissance d'un fromage de caractère avec l'amertume d'un café de spécialité. Une recette audacieuse qui demande de la finesse pour transformer une tradition rustique en une dégustation gastronomique étonnante.",
-            stats: RecipeStats(stars: 2, time: 10, xp: 400, money: 60),
+            stats: RecipeStats(difficulty: 2, time: 10, xp: 400, points: 60),
             details: RecipeDetails(
                 kitchenEquipments: ["Cafetière à piston", "Planche"],
                 ingredients: [
@@ -273,7 +273,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
             title: "Œufs Mayonnaise",
             image: "oeufs_mayonnaise",
             description: "Le pilier des bistrots parisiens. Apprenez à réaliser une mayonnaise montée à la main avec une texture de ruban et une cuisson d'œuf parfaite au degré près. Un exercice de style où la simplicité devient un art. Idéal pour valider vos bases avant de passer aux niveaux supérieurs.",
-            stats: RecipeStats(stars: 1, time: 15, xp: 200, money: 30),
+            stats: RecipeStats(difficulty: 1, time: 15, xp: 200, points: 30),
             details: RecipeDetails(
                 kitchenEquipments: ["Fouet ballon", "Casserole", "Minuteur"],
                 ingredients: [
