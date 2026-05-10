@@ -13,9 +13,10 @@ struct PublicationView: View {
     @State private var selectedCategories: String = ""
     @State private var IsExpanded = false
     @State private var categories: Category = .starter
-    @State private var dificulty = Int (0)
     @State var publicationModal: Bool = false
     @State var isParticipating: Bool = false
+    
+    @State var viewModel: PublicationViewModel = PublicationViewModel()
     
     var body: some View {
         NavigationStack {
@@ -43,17 +44,9 @@ struct PublicationView: View {
                             }
                             .tint(Color.darkWine)
                         }
-                        HStack{
-                            ForEach(1...5, id:\.self) { number in
-                                Button {
-                                    dificulty = number
-                                } label: {
-                                    Text(dificulty >= number ? "★" : "☆")
-                                }
-                            }
-                            
-                        }
-                        .tint(Color.yellow)
+                        
+                        InteractableDifficultyIndicator(difficulty: $viewModel.difficulty)
+                            .frame(height: 24)
                     }
                     
                     
