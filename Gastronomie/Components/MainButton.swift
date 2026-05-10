@@ -7,25 +7,18 @@
     import SwiftUI
 
     struct MainButton: View {
-        
-        @State var isParticipating: Bool = false
-        
         let text: String
         
         var body: some View {
             
-            Button {
-                isParticipating = true
-            } label: {
-                HStack {
-                    Spacer()
-                    
-                    Text(text)
-                        .font(.button)
-                        .foregroundStyle(.brightSnow)
-                    
-                    Spacer()
-                }
+            HStack {
+                Spacer()
+                
+                Text(text)
+                    .font(.button)
+                    .foregroundStyle(.brightSnow)
+                
+                Spacer()
             }
             .frame(maxWidth: .infinity)
             .frame(height: 48)
