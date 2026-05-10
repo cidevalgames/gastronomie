@@ -27,7 +27,7 @@ struct RecipeDetailView: View {
                             .font(.recipeDetailTitle)
                             .foregroundStyle(Color.richMahogany)
                         
-                        DifficultyStars(stars: recipe.stats.stars)
+                        DifficultyStars(difficulty: recipe.stats.difficulty)
                             .foregroundStyle(Color.yellow)
                             .frame(height: 24)
                         
