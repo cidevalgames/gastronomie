@@ -62,6 +62,9 @@ struct SearchBarView: View {
             }
         }
         .searchable(text: $viewModel.searchTerm, prompt: "Rechercher une recette")
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 
