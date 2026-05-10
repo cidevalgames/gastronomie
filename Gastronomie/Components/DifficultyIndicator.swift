@@ -1,5 +1,5 @@
 //
-//  DifficultyStars.swift
+//  DifficultyIndicator.swift
 //  Gastronomie
 //
 //  Created by apprenant76 on 05/05/2026.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct DifficultyStars: View {
-    var stars: Int
+struct DifficultyIndicator: View {
+    var difficulty: Int
     
     var body: some View {
         HStack(spacing: 4) {
-            ForEach(0 ..< stars) { index in
-                Image(systemName:"star.fill")
+            ForEach(0 ..< difficulty) { index in
+                Image(systemName:"bolt.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(maxHeight: .infinity)
             }
             
-            ForEach(0 ..< 5 - stars) { index in
-                Image(systemName:"star")
+            ForEach(0 ..< 5 - difficulty) { index in
+                Image(systemName:"bolt")
                     .resizable()
                     .scaledToFit()
                     .frame(maxHeight: .infinity)
@@ -31,5 +31,5 @@ struct DifficultyStars: View {
 }
 
 #Preview {
-    DifficultyStars(stars: 5)
+    DifficultyIndicator(difficulty: 5)
 }

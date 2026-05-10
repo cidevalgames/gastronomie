@@ -26,7 +26,7 @@ struct RecipeCard: View {
                     .font(.recipeCardTitle)
                     .foregroundStyle(.richMahogany)
                 
-                DifficultyStars(stars: recipe.stats.stars)
+                DifficultyIndicator(difficulty: recipe.stats.difficulty)
                     .frame(height: 16)
                 
                 HStack(spacing: 4) {
@@ -37,7 +37,7 @@ struct RecipeCard: View {
                     Text("\(recipe.stats.xp)")
                     Text("•")
                     Image(systemName: "bitcoinsign.circle")
-                    Text("\(recipe.stats.money)")
+                    Text("\(recipe.stats.points)")
                 }
                 .foregroundStyle(.darkWine)
                 .font(.recipeCardDetail)
