@@ -13,9 +13,11 @@ struct TabBarView: View {
             Tab("Recettes", systemImage: "text.book.closed") {
                 RecipeListView()
             }
+            
             Tab("Loterie", systemImage: "trophy") {
                 LoteryView()
             }
+            
             Tab("Publier", systemImage: "plus") {
                 PublicationView()
             }

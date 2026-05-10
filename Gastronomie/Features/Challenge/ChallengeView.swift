@@ -13,27 +13,32 @@ struct ChallengeView: View {
     let columns = [GridItem(),GridItem()]
     
     var body: some View {
-        VStack {
-            ScrollView(.vertical) {
-                Text("Défis actuels")
-                    .font(.pageTitle)
-                    .foregroundStyle(.richMahogany)
-                    .padding()
-                
-                VStack {
-                    ForEach(viewModel.threeChallengesList) { challenge in
-                        ChallengeRow(points: challenge.points, title: challenge.title)
+        ZStack {
+            Color(.brightSnow)
+                .ignoresSafeArea()
+            
+            VStack {
+                ScrollView(.vertical) {
+                    Text("Défis actuels")
+                        .font(.pageTitle)
+                        .foregroundStyle(.richMahogany)
+                        .padding()
+                    
+                    VStack {
+                        ForEach(viewModel.threeChallengesList) { challenge in
+                            ChallengeRow(points: challenge.points, title: challenge.title)
+                        }
                     }
-                }
-                
-                Text("Challenges réalisés")
-                    .font(.pageTitle)
-                    .foregroundStyle(.richMahogany)
-                    .padding()
-                
-                LazyVGrid(columns: columns) {
-                    ForEach(viewModel.userBadgesImages) { badge in
-                        BadgeCard(badge: badge)
+                    
+                    Text("Challenges réalisés")
+                        .font(.pageTitle)
+                        .foregroundStyle(.richMahogany)
+                        .padding()
+                    
+                    LazyVGrid(columns: columns) {
+                        ForEach(viewModel.userBadgesImages) { badge in
+                            BadgeCard(badge: badge)
+                        }
                     }
                 }
             }

@@ -17,45 +17,49 @@ struct SearchBarView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
+            ZStack {
+                Color(.brightSnow)
+                    .ignoresSafeArea()
                 
-                // Barre de recherche
-                
-                if viewModel.emptySearchTerm {
+                VStack(spacing: 20) {
                     
-                    //  Grille des catégories de recette
+                    // Barre de recherche
                     
-                    LazyVGrid(columns: columns, spacing: 16) {
-                        ForEach(viewModel.categories, id: \.self) { category in
-                            
-                            Text(category)
-                                .font(.button3)
-                                .frame(width: 168, height: 40)
-                                .background(.brightSnow)
-                                .clipShape(RoundedRectangle(cornerRadius: 80))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 80)
-                                        .stroke(Color.richMahogany, lineWidth: 2)
-                                )
-                                .shadow(color: .black.opacity(0.25), radius: 8)
-                        }
-                    }
-                    .padding()
-                    
-                } else {
-                    List {
-                        ForEach(viewModel.filteredRecipes) { recipe in
-                            NavigationLink {
-                                RecipeDetailView(recipe: recipe)
-                            } label: {
-                                SearchRecipeRow(image: recipe.image, title: recipe.title)
+                    if viewModel.emptySearchTerm {
+                        
+                        //  Grille des catégories de recette
+                        
+                        LazyVGrid(columns: columns, spacing: 16) {
+                            ForEach(viewModel.categories, id: \.self) { category in
+                                Button {
+                                    if viewModel.inFilters(category: category) {
+                                        viewModel.removeFilter(category: category)
+                                    } else {
+                                        viewModel.addFilter(category: category)
+                                    }
+                                } label: {
+                                    FilterButton(text: category.rawValue, selected: viewModel.inFilters(category: category))
+                                }
                             }
                         }
+                        .padding()
+                        
+                    } else {
+                        List {
+                            ForEach(viewModel.filteredRecipes) { recipe in
+                                NavigationLink {
+                                    RecipeDetailView(recipe: recipe)
+                                } label: {
+                                    SearchRecipeRow(image: recipe.image, title: recipe.title)
+                                }
+                            }
+                        }
+                        .scrollContentBackground(.hidden)
                     }
+                    
+                    Spacer()
                 }
             }
-            
-            Spacer()
         }
         .searchable(text: $viewModel.searchTerm, prompt: "Rechercher une recette")
     }
