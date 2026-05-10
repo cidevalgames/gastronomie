@@ -44,7 +44,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Mixer longuement au blender jusqu'à obtenir une texture parfaitement lisse.",
                     "Passer au chinois pour une finition veloutée, rectifier l'assaisonnement et servir bien chaud."
                 ],
-                communityImages: []
+                communityImages: ["veloute_butternut_vanille_community_0"]
             ), categories:[Category.starter]
         ),
         
@@ -72,7 +72,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Mélanger délicatement le saumon, la pomme et la ciboulette avec la vinaigrette juste avant de servir.",
                     "Utiliser un emporte-pièce pour dresser le tartare au centre de l'assiette en pressant légèrement."
                 ],
-                communityImages: []
+                communityImages: ["tartare_saumon_yuzu_community_0"]
             ), categories: [Category.starter, Category.japanese]
         ),
         
@@ -102,7 +102,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Réaliser la 'mantecatura' en ajoutant le beurre froid et le parmesan.",
                     "Incorporer l'huile de truffe délicatement, couvrir 2 minutes avant de servir."
                 ],
-                communityImages: []
+                communityImages: ["risotto_coquillettes_truffes_community_0"]
             ), categories: [Category.main, Category.italian]
         ),
         
@@ -162,7 +162,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Enfourner à 200°C pendant 10 à 12 minutes (le poisson doit rester nacré).",
                     "Finir 1 minute sous le grill pour dorer la croûte."
                 ],
-                communityImages: []
+                communityImages: ["cabillaud_croutes_d_herbe_community_0"]
             ), categories: [Category.main]
         ),
         
@@ -189,7 +189,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Snacker les noix 1 min par face.",
                     "Dresser immédiatement avec une pointe d'espuma aérien."
                 ],
-                communityImages: []
+                communityImages: ["saint_jacques_espuma_chorizo_community_0"]
             ), categories: [Category.starter]
         ),
         
@@ -216,7 +216,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Cuire à 180°C jusqu'à 45°C à cœur (pour une cuisson saignante).",
                     "Laisser reposer 15 minutes avant de trancher."
                 ],
-                communityImages: []
+                communityImages: ["boeuf_croute_brioche_community_0"]
             ), categories: [Category.main]
         ),
         
@@ -241,7 +241,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Préparer un coulis de chocolat chaud bien fluide.",
                     "Verser le coulis brûlant au moment de servir pour faire fondre la sphère."
                 ],
-                communityImages: []
+                communityImages: ["sphere_chocolatee_surprise_community_0"]
             ), categories: [Category.dessert]
         ),
         
@@ -264,7 +264,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Toaster le pain.",
                     "Servir le café très chaud et pratiquer l'accord traditionnel par trempage ou alternance."
                 ],
-                communityImages: []
+                communityImages: ["cafe_au_maroilles_community_0"]
             ), categories: [Category.starter]
         ),
         
@@ -289,7 +289,7 @@ struct RecipeService: RecipeProvider, RecipeSearchable {
                     "Écaler les œufs et les couper en deux.",
                     "Napper chaque œuf de mayonnaise jusqu'à le masquer totalement."
                 ],
-                communityImages: []
+                communityImages: ["oeufs_mayonnaise_community_0"]
             ), categories: [Category.starter, Category.french]
         )
     ]
