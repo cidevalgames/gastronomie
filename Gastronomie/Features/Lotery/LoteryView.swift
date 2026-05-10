@@ -12,58 +12,63 @@ struct LoteryView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .center, spacing: 32) {
-                Text("Loterie")
-                    .font(.pageTitle)
-                    .bold()
+            ZStack {
+                Color(.brightSnow)
+                    .ignoresSafeArea()
                 
-                Text("Ce que les participants ont gagné...")
-                    .font(.pageTitle)
-                    .foregroundStyle(.richMahogany)
-                    .multilineTextAlignment(.center)
-                
-                InfiniteCarousel(images: viewModel.giftsImages)
-                    .frame(height: 300)
+                VStack(alignment: .center, spacing: 32) {
+                    Text("Loterie")
+                        .font(.pageTitle)
+                        .bold()
                     
-                Text("Et bien d'autres...")
-                    .font(.pageTitle)
-                    .foregroundStyle(.richMahogany)
-                
-                HStack(spacing: 4) {
-                    Text("Solde: 750")
-                        .font(.loteryMoney)
-                        .foregroundStyle(.darkWine)
-                    Image(systemName: "bitcoinsign.circle")
-                        .font(.loteryMoney)
-                        .foregroundStyle(.darkWine)
-                }
-                
-                Button {
-                    print("do something")
+                    Text("Ce que les participants ont gagné...")
+                        .font(.pageTitle)
+                        .foregroundStyle(.richMahogany)
+                        .multilineTextAlignment(.center)
                     
+                    InfiniteCarousel(images: viewModel.giftsImages)
+                        .frame(height: 300)
                     
-                } label: {
-                 
-                    HStack {
-                        Spacer()
-                        Text("Participer pour 500")
-                            .foregroundStyle(.white)
-                            .font(.button)
+                    Text("Et bien d'autres...")
+                        .font(.pageTitle)
+                        .foregroundStyle(.richMahogany)
+                    
+                    HStack(spacing: 4) {
+                        Text("Solde: 750")
+                            .font(.loteryMoney)
+                            .foregroundStyle(.darkWine)
                         Image(systemName: "bitcoinsign.circle")
                             .font(.loteryMoney)
-                            .foregroundStyle(.white)
-                           
-                        Spacer()
+                            .foregroundStyle(.darkWine)
                     }
-                    .padding()
-                    .background(.darkWine)
-                    .cornerRadius(40)
+                    
+                    Button {
+                        print("do something")
+                        
+                        
+                    } label: {
+                        
+                        HStack {
+                            Spacer()
+                            Text("Participer pour 500")
+                                .foregroundStyle(.white)
+                                .font(.button)
+                            Image(systemName: "bitcoinsign.circle")
+                                .font(.loteryMoney)
+                                .foregroundStyle(.white)
+                            
+                            Spacer()
+                        }
+                        .padding()
+                        .background(.darkWine)
+                        .cornerRadius(40)
+                    }
+                    
+                    Spacer()
+                    
                 }
-                
-                Spacer()
-                
+                .padding()
             }
-            .padding()
         }
     }
 }
