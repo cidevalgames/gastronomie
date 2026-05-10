@@ -11,54 +11,59 @@ struct RecipeListView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                // Présentation de l'utilisateur
+            ZStack {
+                Color(.brightSnow)
+                    .ignoresSafeArea()
                 
-                VStack(spacing: 16) {
-                    VStack {
-                        Text("Bonjour,")
+                ScrollView {
+                    // Présentation de l'utilisateur
+                    
+                    VStack(spacing: 16) {
+                        VStack {
+                            Text("Bonjour,")
+                                .font(.pageTitle)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundStyle(.richMahogany)
+                            
+                            Text(viewModel.currentUserName)
+                                .font(.pageTitle)
+                                .fontWeight(.bold)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundStyle(.richMahogany)
+                        }
+                        
+                        Spacer()
+                        
+                        // Recette du jour
+                        
+                        Text("La recette du jour")
                             .font(.pageTitle)
-                            .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundStyle(.richMahogany)
                         
-                        Text(viewModel.currentUserName)
-                            .font(.pageTitle)
-                            .fontWeight(.bold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundStyle(.richMahogany)
-                    }
-                    
-                    Spacer()
-                    
-                    // Recette du jour
-                    
-                    Text("La recette du jour")
-                        .font(.pageTitle)
-                        .foregroundStyle(.richMahogany)
-                    
-                    NavigationLink {
-                        RecipeDetailView(recipe: viewModel.dailyRecipe)
-                    } label: {
-                        RecipeCard(recipe: viewModel.dailyRecipe)
-                    }
-                    
-                    Divider()
-                    
-                    // Section Recommandations
-                    
-                    Text("Recommandations")
-                        .font(.pageTitle)
-                        .foregroundStyle(.richMahogany)
-                    
-                    ForEach(viewModel.recipes) { recipe in
                         NavigationLink {
-                            RecipeDetailView(recipe: recipe)
+                            RecipeDetailView(recipe: viewModel.dailyRecipe)
                         } label: {
-                            RecipeCard(recipe: recipe)
+                            RecipeCard(recipe: viewModel.dailyRecipe)
+                        }
+                        
+                        Divider()
+                        
+                        // Section Recommandations
+                        
+                        Text("Recommandations")
+                            .font(.pageTitle)
+                            .foregroundStyle(.richMahogany)
+                        
+                        ForEach(viewModel.recipes) { recipe in
+                            NavigationLink {
+                                RecipeDetailView(recipe: recipe)
+                            } label: {
+                                RecipeCard(recipe: recipe)
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
             }
         }
     }
