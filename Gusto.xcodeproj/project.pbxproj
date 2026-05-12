@@ -12,28 +12,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B96F8E22FA128BC005A915D /* Gastronomie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gastronomie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B96F8E22FA128BC005A915D /* Gusto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gusto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE09F022FA35402000E4C71 /* Roboto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roboto.ttf; sourceTree = "<group>"; };
 		9BE09F032FA35402000E4C71 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9B421FE12FA1411100F2D0C8 /* Exceptions for "Gastronomie" folder in "Gastronomie" target */ = {
+		9B421FE12FA1411100F2D0C8 /* Exceptions for "Gusto" folder in "Gusto" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 9B96F8E12FA128BC005A915D /* Gastronomie */;
+			target = 9B96F8E12FA128BC005A915D /* Gusto */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		9B96F8E42FA128BC005A915D /* Gastronomie */ = {
+		9B96F8E42FA128BC005A915D /* Gusto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9B421FE12FA1411100F2D0C8 /* Exceptions for "Gastronomie" folder in "Gastronomie" target */,
+				9B421FE12FA1411100F2D0C8 /* Exceptions for "Gusto" folder in "Gusto" target */,
 			);
-			path = Gastronomie;
+			path = Gusto;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				9BE09F012FA353EC000E4C71 /* Fonts */,
-				9B96F8E42FA128BC005A915D /* Gastronomie */,
+				9B96F8E42FA128BC005A915D /* Gusto */,
 				9B96F8E32FA128BC005A915D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 		9B96F8E32FA128BC005A915D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B96F8E22FA128BC005A915D /* Gastronomie.app */,
+				9B96F8E22FA128BC005A915D /* Gusto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B96F8E12FA128BC005A915D /* Gastronomie */ = {
+		9B96F8E12FA128BC005A915D /* Gusto */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B96F8ED2FA128BC005A915D /* Build configuration list for PBXNativeTarget "Gastronomie" */;
+			buildConfigurationList = 9B96F8ED2FA128BC005A915D /* Build configuration list for PBXNativeTarget "Gusto" */;
 			buildPhases = (
 				9B96F8DE2FA128BC005A915D /* Sources */,
 				9B96F8DF2FA128BC005A915D /* Frameworks */,
@@ -91,13 +91,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				9B96F8E42FA128BC005A915D /* Gastronomie */,
+				9B96F8E42FA128BC005A915D /* Gusto */,
 			);
-			name = Gastronomie;
+			name = Gusto;
 			packageProductDependencies = (
 			);
 			productName = Gastronomie;
-			productReference = 9B96F8E22FA128BC005A915D /* Gastronomie.app */;
+			productReference = 9B96F8E22FA128BC005A915D /* Gusto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B96F8DD2FA128BC005A915D /* Build configuration list for PBXProject "Gastronomie" */;
+			buildConfigurationList = 9B96F8DD2FA128BC005A915D /* Build configuration list for PBXProject "Gusto" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -129,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B96F8E12FA128BC005A915D /* Gastronomie */,
+				9B96F8E12FA128BC005A915D /* Gusto */,
 			);
 		};
 /* End PBXProject section */
@@ -288,18 +288,19 @@
 				DEVELOPMENT_TEAM = WS7ZBT36WS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Gastronomie/Info.plist;
+				INFOPLIST_FILE = Gusto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cideval.Gastronomie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cideval.Gusto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -321,18 +322,19 @@
 				DEVELOPMENT_TEAM = WS7ZBT36WS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Gastronomie/Info.plist;
+				INFOPLIST_FILE = Gusto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cideval.Gastronomie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cideval.Gusto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -347,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B96F8DD2FA128BC005A915D /* Build configuration list for PBXProject "Gastronomie" */ = {
+		9B96F8DD2FA128BC005A915D /* Build configuration list for PBXProject "Gusto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B96F8EB2FA128BC005A915D /* Debug */,
@@ -356,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B96F8ED2FA128BC005A915D /* Build configuration list for PBXNativeTarget "Gastronomie" */ = {
+		9B96F8ED2FA128BC005A915D /* Build configuration list for PBXNativeTarget "Gusto" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B96F8EE2FA128BC005A915D /* Debug */,
